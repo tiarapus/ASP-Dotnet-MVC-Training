@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="Description" content="Training ASP.NET Core MVC">
+    <meta name="author" content="- H -">
+    <meta name="keywords" content="Training ASP.NET Core MVC">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    
+    <title>Login - Training ASP.NET Core MVC</title>
+    <link href="plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="plugins/typicons.font/typicons.css" rel="stylesheet">
+    <link href="plugins/sidebar/sidebar.css" rel="stylesheet">
+    <link href="plugins/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+    
+    <!-- Style Css -->
+    <link href="~/plugins/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/plugins/typicons.font/typicons.css" rel="stylesheet">
+    <link href="~/plugins/sidebar/sidebar.css" rel="stylesheet">
+    <link href="~/plugins/sidemenu/sidemenu.css" rel="stylesheet">
+    <link href="~/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+    <link href="~/plugins/select2/css/select2.min.css" rel="stylesheet">
+    <link href="~/plugins/sweetalert/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="~/plugins/prism/prism.css" rel="stylesheet">
+    <link href="~/css/dashboard.css" rel="stylesheet">
+    <link href="~/css/icons.css" rel="stylesheet">
+    <link href="~/css/skin-modes.css" rel="stylesheet">
+    
+    <!-- Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <script src="~/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/plugins/sweetalert/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="main-body light-theme app sidebar-mini">
+
+<!-- Loader -->
+<div id="loading">
+    <img src="~/img/loader1.svg" class="loader-img" alt="Loader">
+</div>
+
+<!--App Sidebar-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="side-header">
+        <div>
+            <a class="main-logo desktop-logo" href="index.html"><img src="~/img/logo.png" alt="logo"></a>
+            <a class="main-logo mobile-logo" href="index.html"><img src="~/img/icon.png" alt="logo"></a>
+            <a class="main-logo dark-theme-logo" href="index.html"><img src="~/img/logo-white.png" alt="logo"></a>
+        </div>
+        <div class="app-sidebar__toggle" data-toggle="sidebar">
+            <a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
+            <a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
+        </div>
+    </div>
+    
+    <div class="app-sidebar__user clearfix">
+        <div class="user-pro-body">
+            <div class="sideuser-img">
+                <img src="~/img/default.jpg" alt="user-img" class="">
+                <span class="sidebar-icon"></span>
+            </div>
+            <div class="user-info">
+                <h2 class="app-sidebar__user-name">John Doe</h2>
+                <span class="app-sidebar__title">Administrator</span>
+            </div>
+        </div>
+    </div>
+    
+    <ul class="side-menu mt-5">
+        <li>
+            <a class="side-menu__item" href="#">
+                <i class="side-menu__icon" data-eva="person-done-outline"></i>
+                <span class="side-menu__label">Data Dosen</span>
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__item" asp-controller="Mahasiswa" asp-action="Index">
+                <i class="side-menu__icon" data-eva="people-outline"></i>
+                <span class="side-menu__label">Data Mahasiswa</span>
+            </a>
+        </li>
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#">
+                <i class="side-menu__icon" data-eva="calendar-outline"></i>
+                <span class="side-menu__label">Perkuliahan</span>
+                <i class="angle fe fe-chevron-down"></i>
+            </a>
+            <ul class="slide-menu">
+                <li>
+                    <a class="slide-item" href="#">Kelas</a>
+                </li>
+                <li>
+                    <a class="slide-item" href="#">Jadwal Perkuliahan</a>
+                </li>
+                <li>
+                    <a class="slide-item" href="#">Absensi</a>
+                </li>
+                <li>
+                    <a class="slide-item" href="#">Nilai</a>
+                </li>
+            </ul>
+        </li>
+    
+        <li class="slide">
+            <a class="side-menu__item" data-toggle="slide" href="#">
+                <i class="side-menu__icon" data-eva="options-2-outline"></i>
+                <span class="side-menu__label">Administrator</span>
+                <i class="angle fe fe-chevron-down"></i>
+            </a>
+            <ul class="slide-menu">
+                <li>
+                    <a class="slide-item" href="#">Role &amp; Permission</a>
+                </li>
+                <li>
+                    <a class="slide-item" href="#">Akun</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="side-menu__item" asp-controller="MasterTA" asp-action="Index">
+                <i class="side-menu__icon" data-eva="people-outline"></i>
+                <span class="side-menu__label">Master Tahun Akademik</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+<!--/App Sidebar-->
+
+<!--Main Content-->
+<div class="main-content px-0 app-content">
+    <!-- main-header -->
+    <div class="main-header">
+        <div class="container-fluid p-0">
+            <div class="main-header-left">
+                <!--logo-->
+                <div>
+                    <a class="main-logo desktop-logo" href="index.html"><img src="~/img/logo.png" alt="logo"></a>
+                    <a class="main-logo mobile-logo" href="index.html"><img src="~/img/icon.png" alt="logo"></a>
+                    <a class="main-logo dark-theme-logo" href="index.html"><img src="~/img/logo-white.png" alt="logo"></a>
+                </div>
+                <!--/logo-->
+                <!-- sidebar-toggle-->
+                <div class="app-sidebar__toggle" data-toggle="sidebar">
+                    <a class="open-toggle" href="#"><i class="header-icons" data-eva="menu-outline"></i></a>
+                    <a class="close-toggle" href="#"><i class="header-icons" data-eva="close-outline"></i></a>
+                </div>
+                <!-- /sidebar-toggle-->
+            </div>
+            <div class="main-header-right ml-auto">
+                <div class="dropdown main-profile-menu">
+                    <a class="main-img-user" href="">
+                        <img alt="" src="~/img/default.jpg">
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="main-header-profile">
+                            <h6>John Doe</h6>
+                            <span>Administrator</span>
+                        </div>
+                        <a class="dropdown-item" href="#"><i class="si si-user"></i> Profil Saya</a>
+                        <a class="dropdown-item" href="#"><i class="si si-lock"></i> Ubah Password</a>
+                        <a class="dropdown-item" href="#"><i class="si si-power"></i> Keluar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/main-header-->
+   
+    <!--Page Header-->
+    <div class="main-content-header container-fluid py-3 px-4 bg-white border-top">
+        <h2 class="main-content-title font-weight-lighter mb-lg-0 mb-3">
+            @ViewData["title"]
+        </h2>
+        
+        @ViewData["submenu"]
+        @* <div class="d-flex">
+            <a href="#" class="btn btn-warning btn-with-icon mx-1">
+                <i class="fe fe-upload"></i> Import
+            </a>
+            <a href="#" class="btn btn-warning btn-with-icon mx-1">
+                <i class="fe fe-plus-circle"></i> Tambah
+            </a>
+        </div> *@
+    </div>
+    <!--Page Header-->
+    
+    @{
+        @* var container = "container"
+        if(ViewData["contauner"] is not null){
+            container = ViewData["container"]!.ToString();
+        } *@
+
+        var Container = ViewData["container"] ?? "container";
+    }
+
+    <!--Main Content Container-->
+    
+    <div class="@Container mt-4" >
+        <div class="row">
+            <div class="alert-form col-12">
+                @Html.Raw(TempData["message"])
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</div>
+<!--Main Content-->
+
+<!--footer-->
+<div class="main-footer mg-t-auto">
+    <div class="container-fluid">
+        <span>Copyright &copy; 2023. Training ASP.NET Core. All rights reserved. Patch: 1.0</span>
+    </div>
+</div>
+<!--/footer-->
+
+<script src="~/plugins/ionicons/ionicons.js"></script>
+<script src="~/plugins/web-fonts/eva.min.js"></script>
+<script src="~/plugins/moment/moment.js"></script>
+<script src="~/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="~/plugins/mscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="~/plugins/sidebar/sidebar.js"></script>
+<script src="~/plugins/sidebar/sidebar-custom.js"></script>
+<script src="~/plugins/sidemenu/sidemenu.js"></script>
+<script src="~/plugins/clipboard/clipboard.min.js"></script>
+<script src="~/plugins/clipboard/clipboard.js"></script>
+<script src="~/plugins/select2/js/select2.min.js"></script>
+<script src="~/plugins/prism/prism.js"></script>
+<script src="~/js/right-side.js"></script>
+<script src="~/js/custom.js"></script>
+
+</body>
+
+</html>

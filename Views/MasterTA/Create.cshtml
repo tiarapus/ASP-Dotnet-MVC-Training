@@ -1,0 +1,53 @@
+@model D1_Training.ViewModels.MasterTA.MasterTAViewModel
+
+
+@{
+    ViewData["title"] = "Form Input Data MasterTA";
+    ViewData["container"] = "container-fluid";
+    ViewData["active_page"] = "create";
+    ViewData["submenu"] = await Html.PartialAsync("_subMenu.cshtml");
+}
+
+
+<div class="row py-4 justify-content-center">
+    <div class="col-md-9">
+        <form asp-controller="MasterTA" asp-action="Create">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="main-content-label font-weight-semibold tx-primary mb-0">
+                        MasterTA Form:
+                    </h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Periode" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <input asp-for="Periode" class="form-control" type="text"/>
+                            <span asp-validation-for="Periode" class="text-danger"></span>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Namaperiode" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <input asp-for="Namaperiode" class="form-control" type="text"/>
+                            <span asp-validation-for="Periode" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-footer justify-content-end">
+                    <button type="submit" class="btn btn-main-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

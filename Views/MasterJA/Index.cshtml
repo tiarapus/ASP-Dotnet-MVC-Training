@@ -1,0 +1,86 @@
+@{
+    ViewData["title"] = "MasterJA Form";
+    ViewData["container"] = "container-fluid";
+}
+
+
+<div class="row py-4 justify-content-center">
+    <div class="col-md-9">
+        <form asp-controller="MasterJA" asp-action="Index">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="main-content-label font-weight-semibold tx-primary mb-0">
+                        MasterJA Form:
+                    </h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="JA" class="main-content-label tx-medium tx-gray-600">
+                                Jenis Angket:
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select name="JA" id="JA" class="form-control">
+                                <option value="">- Pilih Jenis Angket -</option>
+                                <option value="Taruna">Taruna</option>
+                                <option value="Organik">Organik</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Prodi" class="main-content-label tx-medium tx-gray-600">
+                                Kode Angket:
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select name="KA" id="KA" class="form-control">
+                                <option value="">- Pilih Kode Angket -</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="G">G</option>
+                                <option value="H">H</option>
+                                <option value="I">I</option>
+                                <option value="J">J</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="NA" class="main-content-label tx-medium tx-gray-600">
+                                Nama Angket:
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <input name="NA" id="NA" class="form-control" type="text"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="S" class="main-content-label tx-medium tx-gray-600">
+                                Singkatan:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="S" id="S" class="form-control" type="text"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-footer justify-content-end">
+                    <button type="submit" class="btn btn-main-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

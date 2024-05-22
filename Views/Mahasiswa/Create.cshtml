@@ -1,0 +1,127 @@
+@model D1_Training.ViewModels.Mahasiswa.CreateMahasiswaViewModel
+
+@{
+    ViewData["title"] = "Form Input Data Mahasiswa";
+    ViewData["container"] = "container-fluid";
+    ViewData["active_page"] = "create";
+    ViewData["submenu"] = await Html.PartialAsync("_subMenu.cshtml");
+}
+
+
+<div class="row py-4 justify-content-center">
+    <div class="col-md-9">
+        <form asp-controller="Mahasiswa" asp-action="Create">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="main-content-label font-weight-semibold tx-primary mb-0">
+                        Tambah Data Mahasiswa:
+                    </h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Fakultas" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select asp-for="Fakultas" class="form-control" asp-items="@Model.FakultasSelectOptions">
+                            </select>
+                            <span asp-validation-for="Fakultas" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Prodi" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select asp-for="Prodi" asp-items="@Model.ProdiSelectOptions" class="form-control">
+                            </select>
+                            <span asp-validation-for="Prodi" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Nim" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <input asp-for="Nim" class="form-control" type="text"/>
+                            <span asp-validation-for="Nim" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Nama" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input asp-for="Nama" name="Nama" id="Nama" class="form-control" type="text"/>
+                            <span asp-validation-for="Nama" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Agama" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-6 mg-t-5 mg-md-t-0">
+                            <select asp-for="Agama" class="form-control">
+                                <option value="">- Pilih Agama -</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen Protestan">Kristen Protestan</option>
+                                <option value="Katolik">Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Konghucu">Konghucu</option>
+                            </select>
+                            <span asp-validation-for="Agama" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Alamat" class="main-content-label tx-medium tx-gray-600">
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea asp-for="Alamat" action="Alamat" rows="4" class="form-control"></textarea>
+                            <span asp-validation-for="Alamat" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label asp-for="Gender" class="main-content-label tx-medium tx-gray-600">Jenis Kelamin:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-6 col-lg-4 pr-1">
+                                    <label class="rdiobox mb-0">
+                                        <input asp-for="Gender" type="radio" value="P"> <span>Laki-laki</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-lg-4 pl-1">
+                                    <label class="rdiobox mb-0">
+                                        <input asp-for="Gender"type="radio" value="L"> <span>Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-footer justify-content-end">
+                    <button type="submit" class="btn btn-main-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

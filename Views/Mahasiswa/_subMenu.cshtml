@@ -1,0 +1,11 @@
+@{
+    var activePage = ViewData["active_page"]!.ToString();
+}
+<div class="d-flex">
+    @if(activePage == "create" || activePage == "update"){
+        <a asp-action="Index" type="button" class="btn btn-primary">Kembali</a>
+    }
+    @if(activePage == "index"){
+        <a asp-action="Create" type="button" class="btn btn-primary">Input  Data</a>
+    }
+</div>

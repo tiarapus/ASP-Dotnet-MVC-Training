@@ -1,0 +1,20 @@
+@{
+    ViewData["title"] = "Table";
+    ViewData["container"] = "container-fluid";
+
+}
+
+
+<div class="row py-4">
+    @await Html.PartialAsync("_sideMenu.cshtml")
+    <div class="col-md-9">
+        
+       <table class="table">
+        <tr>
+            <td><a asp-action="Detail" asp-route-id="1" asp-route-nama="John Doe" class="href">Detail</a></td>
+            <td>John Doe</td>
+            <td>1</td>
+        </tr>
+       </table>
+    </div>
+</div>

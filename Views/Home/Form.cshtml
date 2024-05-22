@@ -1,0 +1,133 @@
+@{
+    ViewData["title"] = "Form";
+    ViewData["container"] = "container-fluid";
+}
+
+
+<div class="row py-4">
+    @await Html.PartialAsync("_sideMenu.cshtml")
+    <div class="col-md-9">
+        <form asp-controller="Home" asp-action="Form">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="main-content-label font-weight-semibold tx-primary mb-0">
+                        Contoh Komponen Form:
+                    </h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Fakultas" class="main-content-label tx-medium tx-gray-600">
+                                Fakultas:
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select name="Fakultas" id="Fakultas" class="form-control">
+                                <option value="">- Pilih fakultas -</option>
+                                <option value="Kedokteran">Kedokteran</option>
+                                <option value="Ekonomi">Ekonomi</option>
+                                <option value="Teknologi Industri">Teknologi Industri</option>
+                                <option value="Teknik Sipil">Teknik Sipil</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Prodi" class="main-content-label tx-medium tx-gray-600">
+                                Program Studi:
+                            </label>
+                        </div>
+                        <div class="col-md-8 mg-t-5 mg-md-t-0">
+                            <select name="Prodi" id="Prodi" class="form-control">
+                                <option value="">- Pilih prodi -</option>
+                                <option value="Akuntansi">Akuntansi</option>
+                                <option value="Ekonomi">Ekonomi</option>
+                                <option value="Kedokteran">Kedokteran</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Nim" class="main-content-label tx-medium tx-gray-600">
+                                NIM:
+                            </label>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <input name="Nim" id="Nim" class="form-control" type="text"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Nama" class="main-content-label tx-medium tx-gray-600">
+                                Nama Lengkap:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="Nama" id="Nama" class="form-control" type="text"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Agama" class="main-content-label tx-medium tx-gray-600">
+                                Agama:
+                            </label>
+                        </div>
+                        <div class="col-md-6 mg-t-5 mg-md-t-0">
+                            <select name="Agama" id="Agama" class="form-control">
+                                <option value="">- Pilih Agama -</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen Protestan">Kristen Protestan</option>
+                                <option value="Katolik">Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Konghucu">Konghucu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label for="Alamat" class="main-content-label tx-medium tx-gray-600">
+                                Alamat:
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea name="Alamat" id="Alamat" rows="4" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row row-xs align-items-center">
+                        <div class="col-md-4">
+                            <label class="main-content-label tx-medium tx-gray-600">Jenis Kelamin:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-6 col-lg-4 pr-1">
+                                    <label class="rdiobox mb-0">
+                                        <input for="Gender" name="Gender" type="radio" value="true"> <span>Laki-laki</span>
+                                    </label>
+                                </div>
+                                <div class="col-6 col-lg-4 pl-1">
+                                    <label class="rdiobox mb-0">
+                                        <input for="Gender" name="Gender" type="radio" value="false"> <span>Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-footer justify-content-end">
+                    <button type="submit" class="btn btn-main-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

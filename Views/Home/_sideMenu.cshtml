@@ -1,0 +1,32 @@
+@{
+    var activePage = ViewData["title"]!.ToString();
+
+}
+<div class="col-md-3">
+        <div class="card p-0">
+                <div class="card-body">
+                    <div class="card-header">
+                        <h5 class="main-content-label font-weight-semibold tx-primary mb-0">
+                            Latihan Komponen HTML
+                        </h5>
+                    </div>
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <ul class="list-group mt-0">
+                            <a asp-action="Index" class="list-group-item list-group-item-action border-top-0 @(activePage == "Latihan ASP.NET Core" ? "active" : "")">
+                                Basic HTML
+                            </a>
+                            <a asp-action="Privacy" class="list-group-item list-group-item-action border-top-0 @(activePage == "Privacy Policy" ? "active" : "")">
+                                Privacy Policy
+                            </a>
+                            <a asp-action="Form" class="list-group-item list-group-item-action border-top-0 @(activePage == "Form" ? "active" : "")">
+                                Form
+                            </a>
+                            <a asp-action="Table" class="list-group-item list-group-item-action border-top-0 @(activePage == "Table" ? "active" : "")">
+                                Table
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+
